@@ -9,7 +9,6 @@ import {
   Group,
   Indicator,
   Title,
-  ThemeIcon,
   Text,
   Avatar,
   Timeline,
@@ -18,8 +17,11 @@ import {
 import "./App.css";
 import { HeaderSimple } from "./components/headerSimple";
 import "@mantine/core/styles.css";
-import House from "./components/house";
-import { IconHeart, IconMail } from "@tabler/icons-react";
+import {
+  IconBrandGithubFilled,
+  IconHeartFilled,
+  IconMail,
+} from "@tabler/icons-react";
 
 const theme = createTheme({
   headings: {
@@ -34,11 +36,15 @@ function App() {
   return (
     <MantineProvider theme={theme}>
       <HeaderSimple />
-      <House />
-      <Container size={"sm"}>
-        <Center h={80} bg="var(--mantine-color-body)">
-          <Box>Hello, I am currently working as an Engineer for VNG 👋</Box>
-        </Center>
+      <Container size={"sm"} style={{ clear: "both", paddingTop: "60px" }}>
+        <Box my={15}>
+          <Center h={30} bg="var(--mantine-color-body)">
+            <Text size="md">Hi 👋, I'm Rin</Text>
+          </Center>
+          <Center h={30} bg="var(--mantine-color-body)">
+            <Text size="sm">A passionate frontend developer from Vietnam.</Text>
+          </Center>
+        </Box>
         <Box>
           <Image
             radius={"md"}
@@ -53,11 +59,7 @@ function App() {
             </Box>
             <Box>
               <Indicator>
-                <Avatar
-                  size="lg"
-                  radius="md"
-                  src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-1.png"
-                />
+                <Avatar size="lg" radius="md" src="/rin.jpg" />
               </Indicator>
             </Box>
           </Group>
@@ -170,11 +172,11 @@ function App() {
               mb={15}
               style={{ borderBottom: "3px solid gray", display: "table" }}
             >
-              I <IconHeart size={18} />
+              I <IconHeartFilled size={18} />
             </Title>
             <span style={{ marginLeft: "20px" }}>
               Music, Drawing, Photography, Play foofball,{" "}
-              <a href="#">Travelling</a> ,<a href="#">Coding</a>.
+              <a href="#">Travelling</a> , <a href="#">Coding</a>.
             </span>
           </div>
           <div style={{ marginTop: 15 }}>
@@ -204,6 +206,16 @@ function App() {
         </Box>
       </Container>
       <footer>
+        <Center h={20} bg="var(--mantine-color-body)" color="gray">
+          <Box>
+            <Group justify="center">
+              <a href="https://github.com/RinNguyens">
+                <IconBrandGithubFilled size={20} />{" "}
+              </a>
+            </Group>
+          </Box>
+        </Center>
+
         <Center h={80} bg="var(--mantine-color-body)" color="gray">
           <Box color="gray" opacity={"0.4"}>
             <Text size="sm">© 2023 Rin. All Rights Reserved.</Text>
