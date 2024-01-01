@@ -1,7 +1,7 @@
 import { Container, Image, Grid, Center, Group, Stack, Box, Button, Code } from '@mantine/core';
 import { Carousel } from '@mantine/carousel';
 import { useState } from 'react';
-import { IconBrandJavascript, IconCheck, IconShadow, IconVersions } from '@tabler/icons-react';
+import { IconBrandJavascript, IconShadow, IconVersions } from '@tabler/icons-react';
 import code from '../../../public/code.png';
 import awaitImg from '../../../public/await.png';
 
@@ -9,6 +9,7 @@ export const Seminar = () => {
     const [displayJS, setDisplayJS] = useState(false);
     const [text, setText] = useState('');
     const [prosimeStatus, setPromiseStatus] = useState(false);
+    const [promiseObject, setPromiseObject] = useState(false);
     return (
         <Container p={0} m={0} fluid w={'100%'} h={'100%'} pt={70} px={20}>
             <Carousel height={'100%'} style={{ width: '100%' }}>
@@ -280,7 +281,7 @@ export const Seminar = () => {
                     </Group>
                     <Container >
                         <Box>
-                            <h3>The value of the PromiseStatus, the state, can be one of three values: <IconShadow size={16} color={prosimeStatus ? 'orange': 'gray'} onClick={() => setPromiseStatus(!prosimeStatus)} /></h3>
+                            <h3>The value of the PromiseStatus, the state, can be one of three values: <IconShadow size={16} color={prosimeStatus ? 'orange' : 'gray'} onClick={() => setPromiseStatus(!prosimeStatus)} /></h3>
                             <ul>
                                 <li><a style={{ fontSize: '18px', fontWeight: '700' }}>✅ fulfilled: </a>The promise has been resolved. Everything went fine, no errors occurred within the promise.</li>
                                 <li><a style={{ fontSize: '18px', fontWeight: '700' }}>❌ rejected: </a>The promise has been rejected. Argh, something went wrong...</li>
@@ -306,27 +307,37 @@ export const Seminar = () => {
                         mb={100}
                     >
                         <Center maw={800} h={100} bg="var(--mantine-color-gray-light)" p={40}>
-                            <h1 className='text-center'>Promise Status <IconBrandJavascript color={'orange'} size={32} /></h1>
+                            <h1 className='text-center'>Promise object </h1>
                         </Center>
 
                     </Group>
                     <Container >
                         <Box>
-                            <h3>The value of the PromiseStatus, the state, can be one of three values: <IconShadow size={16} color={prosimeStatus ? 'orange': 'gray'} onClick={() => setPromiseStatus(!prosimeStatus)} /></h3>
+                            <h3>To a promise, we can attach 3 methods: <IconShadow size={20} color={promiseObject ? 'orange' : 'gray'} onClick={() => setPromiseObject(!promiseObject)} /> </h3>
                             <ul>
-                                <li><a style={{ fontSize: '18px', fontWeight: '700' }}>✅ fulfilled: </a>The promise has been resolved. Everything went fine, no errors occurred within the promise.</li>
-                                <li><a style={{ fontSize: '18px', fontWeight: '700' }}>❌ rejected: </a>The promise has been rejected. Argh, something went wrong...</li>
-                                <li><a style={{ fontSize: '18px', fontWeight: '700' }}>⏳ pending: </a>The promise has neither resolved nor rejected (yet), the promise is still pending.</li>
+                                <li><a style={{ fontSize: '18px', fontWeight: '700' }}>✅ .then(): </a>Gets called after a promise resolved.</li>
+                                <li><a style={{ fontSize: '18px', fontWeight: '700' }}>❌ .catch(): </a>Gets called after a promise rejected.</li>
+                                <li><a style={{ fontSize: '18px', fontWeight: '700' }}>finally(): </a>Always gets called, whether the promise resolved or rejected.</li>
 
                             </ul>
-                            <Image src="https://res.cloudinary.com/practicaldev/image/fetch/s--9A_mOYMP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/duen4peq0bdr55cka5ya.png" />
+                            <Image src="https://res.cloudinary.com/practicaldev/image/fetch/s--19tIvFJQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/mu1aqqnyfjsfon5hwrtw.png" />
                         </Box>
                         {
-                            prosimeStatus ? <Box my={20}>
-                                <h3>Let's try and see that gets logged when we invoke either the resolve or reject method! In my example, I called the resolve method res, and the reject method rej.</h3>
-                                <Image src="https://res.cloudinary.com/practicaldev/image/fetch/s--qKIq-sYt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/z0b9v0h7aiq073l5tl2l.gif" />
-                            </Box> : null
+                            promiseObject ? (
+                                <>
+                                    <Box my={20}>
+                                        <h3>The .then method receives the value passed to the resolve method.</h3>
+                                        <Image src="https://res.cloudinary.com/practicaldev/image/fetch/s--DZld0c-0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/11vxhn9cun7stpjbdi80.gif" />
+                                    </Box>
+
+                                    <Box my={20}>
+                                        <h3>The .catch method receives the value passed to the rejected method</h3>
+                                        <Image src="https://res.cloudinary.com/practicaldev/image/fetch/s--e9SZHcPk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/v5y24jz4u89flazvdyn4.gif" />
+                                    </Box>
+                                </>
+                            ) : null
                         }
+
 
                     </Container>
                 </Carousel.Slide>
