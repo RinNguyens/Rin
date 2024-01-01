@@ -4,15 +4,17 @@ import { useComputedColorScheme } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import classes from "./HeaderSimple.module.css";
 import { NightMode } from "../NightMode";
+import { useNavigate } from "react-router-dom";
 
 const links = [
-  { link: "/works", label: "Works" },
-  { link: "/wallpapers", label: "Wallpapers" },
+  { link: "/", label: "Works" },
+  { link: "/seminar", label: "Seminar" },
   { link: "/learn", label: "Learn" },
   { link: "/community", label: "Community" },
 ];
 
 export function HeaderSimple() {
+  const navigate = useNavigate();
   const [opened, { toggle }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);
   const computedColorScheme = useComputedColorScheme("light", {
@@ -27,6 +29,7 @@ export function HeaderSimple() {
       data-active={active === link.link || undefined}
       onClick={(event) => {
         event.preventDefault();
+        navigate(link.link);
         setActive(link.link);
       }}
     >
