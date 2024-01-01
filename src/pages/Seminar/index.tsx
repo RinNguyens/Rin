@@ -1,10 +1,14 @@
 import { Container, Image, Grid, Center, Group, Stack, Box, Button, Code } from '@mantine/core';
 import { Carousel } from '@mantine/carousel';
 import { useState } from 'react';
-import { IconBrandJavascript, IconVersions } from '@tabler/icons-react';
+import { IconBrandJavascript, IconCheck, IconShadow, IconVersions } from '@tabler/icons-react';
+import code from '../../../public/code.png';
+import awaitImg from '../../../public/await.png';
+
 export const Seminar = () => {
     const [displayJS, setDisplayJS] = useState(false);
     const [text, setText] = useState('');
+    const [prosimeStatus, setPromiseStatus] = useState(false);
     return (
         <Container p={0} m={0} fluid w={'100%'} h={'100%'} pt={70} px={20}>
             <Carousel height={'100%'} style={{ width: '100%' }}>
@@ -74,7 +78,7 @@ export const Seminar = () => {
                         mb={100}
                     >
                         <Center maw={800} h={100} bg="var(--mantine-color-gray-light)" p={40}>
-                            <h1 className='text-center'>Promise  <IconBrandJavascript color={'orange'} size={32} /></h1>
+                            <h1 className='text-center'>Asynchronous JavaScript <IconBrandJavascript color={'orange'} size={32} /></h1>
                         </Center>
                     </Group>
                     <Container fluid>
@@ -125,7 +129,7 @@ export const Seminar = () => {
                                                     <h2 style={{ fontWeight: '800' }}>Callback Hell</h2>
                                                 </Center>
                                                 <Center w={600} style={{ margin: 'auto' }}>
-                                                    <p>The callback hell is when we try to write asynchronous JavaScript in a way where execution happens visually from top to bottom, creating a code that has a pyramid shape with many at the end.</p>
+                                                    <h3>The callback hell is when we try to write asynchronous JavaScript in a way where execution happens visually from top to bottom, creating a code that has a pyramid shape with many at the end.</h3>
                                                 </Center>
 
 
@@ -136,8 +140,66 @@ export const Seminar = () => {
                                                             <Image src="https://miro.medium.com/v2/resize:fit:1358/1*VH2f5KmjKwlBaEYyOmSE2g.png" />
                                                         </Code>
                                                         <Code>
-                                                        <Image src="https://cdn.hashnode.com/res/hashnode/image/upload/v1604259991826/zs4DeWDTh.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp" />
+                                                            <Image src="https://cdn.hashnode.com/res/hashnode/image/upload/v1604259991826/zs4DeWDTh.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp" />
 
+                                                        </Code>
+                                                    </Box>
+
+                                                </Group>
+                                            </Box>
+                                        )
+                                    }
+                                    {
+                                        text === 'promise' && (
+                                            <Box>
+                                                <Center h={80} bg="var(--mantine-color-gray-light)" p={40}>
+                                                    <h2 style={{ fontWeight: '800' }}>Promise</h2>
+                                                </Center>
+                                                <Center w={600} style={{ margin: 'auto' }}>
+                                                    <p>The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.</p>
+                                                </Center>
+
+
+                                                <Group justify='space-between'>
+                                                    <Box>
+                                                        <h3>Asynchronous Chaining</h3>
+                                                        <Code>
+                                                            <Image src={code} />
+                                                        </Code>
+                                                        <Code>
+                                                            <h3>Callback hell</h3>
+                                                            <Image src="https://cdn.hashnode.com/res/hashnode/image/upload/v1604259991826/zs4DeWDTh.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp" />
+                                                        </Code>
+                                                    </Box>
+
+                                                </Group>
+                                            </Box>
+                                        )
+                                    }
+                                    {
+                                        text === 'async' && (
+                                            <Box>
+                                                <Center h={80} bg="var(--mantine-color-gray-light)" p={40}>
+                                                    <h2 style={{ fontWeight: '800' }}>Async / await</h2>
+                                                </Center>
+                                                <Center w={600} style={{ margin: 'auto' }}>
+                                                    <p>There is a cleaner way to do the same thing, waiting for a function to complete its execution using the await keyword. The await() works only inside the async() function. So, we need to wrap these inside a wrapper function.</p>
+                                                </Center>
+
+
+                                                <Group justify='space-between'>
+                                                    <Box>
+                                                        <h3>Asynchronous</h3>
+                                                        <Code>
+                                                            <Image src={awaitImg} />
+                                                        </Code>
+                                                        <Code>
+                                                            <h3>Promise</h3>
+                                                            <Image src={code} />
+                                                        </Code>
+                                                        <Code>
+                                                            <h3>Callback hell</h3>
+                                                            <Image src="https://cdn.hashnode.com/res/hashnode/image/upload/v1604259991826/zs4DeWDTh.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp" />
                                                         </Code>
                                                     </Box>
 
@@ -158,8 +220,117 @@ export const Seminar = () => {
 
                     </Container>
                 </Carousel.Slide>
+                {/* 4 */}
+                <Carousel.Slide>
+                    <Group
+                        w={'100%'}
+                        mt={'50'}
+                        justify='center'
+                        mb={100}
+                    >
+                        <Center maw={800} h={100} bg="var(--mantine-color-gray-light)" p={40}>
+                            <h1 className='text-center'>Promise Syntax <IconBrandJavascript color={'orange'} size={32} /></h1>
+                        </Center>
+
+                    </Group>
+                    <Container>
+                        <Box>
+                            <p>We can create a promise, using a Promise constructor that receives a callback. Okay cool, let's try it out!</p>
+                            <Image src="https://res.cloudinary.com/practicaldev/image/fetch/s--phTVdCKA--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/79zi452hphe7ecylhozy.gif" />
+                        </Box>
+                        <Box my={20}>
+
+                        </Box>
+                    </Container>
+                </Carousel.Slide>
+                <Carousel.Slide>
+                    <Group
+                        w={'100%'}
+                        mt={'50'}
+                        justify='center'
+                        mb={100}
+                    >
+                        <Center maw={800} h={100} bg="var(--mantine-color-gray-light)" p={40}>
+                            <h1 className='text-center'>Wait woah, what just got returned? <IconBrandJavascript color={'orange'} size={32} /></h1>
+                        </Center>
+
+                    </Group>
+                    <Container size={"lg"}>
+                        <Box>
+                            <p>We can create a promise, using a Promise constructor that receives a callback. Okay cool, let's try it out!</p>
+                            <Image src="https://dev-to-uploads.s3.amazonaws.com/i/34m9mus03v2zo9agn2bq.png" />
+                            {/* <Image src="https://res.cloudinary.com/practicaldev/image/fetch/s--9A_mOYMP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/duen4peq0bdr55cka5ya.png" />                            */}
+                        </Box>
+                        <Box my={20}>
+
+                        </Box>
+                    </Container>
+                </Carousel.Slide>
+                <Carousel.Slide>
+                    <Group
+                        w={'100%'}
+                        mt={'50'}
+                        justify='center'
+                        mb={100}
+                    >
+                        <Center maw={800} h={100} bg="var(--mantine-color-gray-light)" p={40}>
+                            <h1 className='text-center'>Promise Status <IconBrandJavascript color={'orange'} size={32} /></h1>
+                        </Center>
+
+                    </Group>
+                    <Container >
+                        <Box>
+                            <h3>The value of the PromiseStatus, the state, can be one of three values: <IconShadow size={16} color={prosimeStatus ? 'orange': 'gray'} onClick={() => setPromiseStatus(!prosimeStatus)} /></h3>
+                            <ul>
+                                <li><a style={{ fontSize: '18px', fontWeight: '700' }}>✅ fulfilled: </a>The promise has been resolved. Everything went fine, no errors occurred within the promise.</li>
+                                <li><a style={{ fontSize: '18px', fontWeight: '700' }}>❌ rejected: </a>The promise has been rejected. Argh, something went wrong...</li>
+                                <li><a style={{ fontSize: '18px', fontWeight: '700' }}>⏳ pending: </a>The promise has neither resolved nor rejected (yet), the promise is still pending.</li>
+
+                            </ul>
+                            <Image src="https://res.cloudinary.com/practicaldev/image/fetch/s--9A_mOYMP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/duen4peq0bdr55cka5ya.png" />
+                        </Box>
+                        {
+                            prosimeStatus ? <Box my={20}>
+                                <h3>Let's try and see that gets logged when we invoke either the resolve or reject method! In my example, I called the resolve method res, and the reject method rej.</h3>
+                                <Image src="https://res.cloudinary.com/practicaldev/image/fetch/s--qKIq-sYt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/z0b9v0h7aiq073l5tl2l.gif" />
+                            </Box> : null
+                        }
+
+                    </Container>
+                </Carousel.Slide>
+                <Carousel.Slide>
+                    <Group
+                        w={'100%'}
+                        mt={'50'}
+                        justify='center'
+                        mb={100}
+                    >
+                        <Center maw={800} h={100} bg="var(--mantine-color-gray-light)" p={40}>
+                            <h1 className='text-center'>Promise Status <IconBrandJavascript color={'orange'} size={32} /></h1>
+                        </Center>
+
+                    </Group>
+                    <Container >
+                        <Box>
+                            <h3>The value of the PromiseStatus, the state, can be one of three values: <IconShadow size={16} color={prosimeStatus ? 'orange': 'gray'} onClick={() => setPromiseStatus(!prosimeStatus)} /></h3>
+                            <ul>
+                                <li><a style={{ fontSize: '18px', fontWeight: '700' }}>✅ fulfilled: </a>The promise has been resolved. Everything went fine, no errors occurred within the promise.</li>
+                                <li><a style={{ fontSize: '18px', fontWeight: '700' }}>❌ rejected: </a>The promise has been rejected. Argh, something went wrong...</li>
+                                <li><a style={{ fontSize: '18px', fontWeight: '700' }}>⏳ pending: </a>The promise has neither resolved nor rejected (yet), the promise is still pending.</li>
+
+                            </ul>
+                            <Image src="https://res.cloudinary.com/practicaldev/image/fetch/s--9A_mOYMP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/duen4peq0bdr55cka5ya.png" />
+                        </Box>
+                        {
+                            prosimeStatus ? <Box my={20}>
+                                <h3>Let's try and see that gets logged when we invoke either the resolve or reject method! In my example, I called the resolve method res, and the reject method rej.</h3>
+                                <Image src="https://res.cloudinary.com/practicaldev/image/fetch/s--qKIq-sYt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/z0b9v0h7aiq073l5tl2l.gif" />
+                            </Box> : null
+                        }
+
+                    </Container>
+                </Carousel.Slide>
             </Carousel>
         </Container>
     );
 }
-
