@@ -2,8 +2,8 @@ import { Container, Image, Grid, Center, Group, Stack, Box, Button, Code } from 
 import { Carousel } from '@mantine/carousel';
 import { useState } from 'react';
 import { IconBrandJavascript, IconShadow, IconVersions } from '@tabler/icons-react';
-import code from '../../../public/code.png';
-import awaitImg from '../../../public/await.png';
+import code from '/code.png';
+import awaitImg from '/await.png';
 
 export const Seminar = () => {
     const [displayJS, setDisplayJS] = useState(false);
@@ -27,7 +27,7 @@ export const Seminar = () => {
                     <Grid gutter={12} h={720}>
                         <Grid.Col span={6} >
                             <h3>Event loop javascript</h3>
-                            <Image src={"https://res.cloudinary.com/practicaldev/image/fetch/s---a_4f2_K--/c_imagga_scale,f_auto,fl_progressive,h_900,q_66,w_1600/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/k2l36khs41oncfwmy3wk.gif"} />
+                            <Image src={"https://res.cloudinary.com/practicaldev/image/fetch/s--05Fi8vBq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/42eatw03fcha0e1qcrf0.gif"} />
 
                         </Grid.Col>
                         <Grid.Col span={6}>
@@ -339,6 +339,74 @@ export const Seminar = () => {
                         }
 
 
+                    </Container>
+                </Carousel.Slide>
+                <Carousel.Slide>
+                    <Group
+                        w={'100%'}
+                        mt={'50'}
+                        justify='center'
+                        mb={100}
+                    >
+                        <Center maw={800} h={100} bg="var(--mantine-color-gray-light)" p={40}>
+                            <h1 className='text-center'>Event loop Javascript </h1>
+                        </Center>
+
+                    </Group>
+                    <Container >
+                        <Box>
+                            <h3>The JavaScript Event Loop is a crucial aspect of the language that allows it to execute code asynchronously, enabling developers to build powerful and responsive web applications. This guide aims to provide a deep understanding of how the Event Loop works, why it is needed, and how it affects your JavaScript code. We will cover everything from the basics to more advanced concepts, ensuring that you have a thorough understanding of this important feature.</h3>
+                        <Image src="https://media.licdn.com/dms/image/D5612AQESI94ayNiYEQ/article-inline_image-shrink_1500_2232/0/1679071252683?e=1709769600&v=beta&t=tr2caz7lr3N-SKo9Wb8JT_MGSyFXqt0WZ8x_uGDt6Uc" />
+                        </Box>
+                    </Container>
+                </Carousel.Slide>
+                <Carousel.Slide>
+                    <Group
+                        w={'100%'}
+                        mt={'50'}
+                        justify='center'
+                        mb={100}
+                    >
+                        <Center maw={800} h={100} bg="var(--mantine-color-gray-light)" p={40}>
+                            <h1 className='text-center'>Event loop Javascript </h1>
+                        </Center>
+
+                    </Group>
+                    <Container >
+                        <Box>
+                            <h3>The JavaScript Event Loop is a crucial aspect of the language that allows it to execute code asynchronously, enabling developers to build powerful and responsive web applications. This guide aims to provide a deep understanding of how the Event Loop works, why it is needed, and how it affects your JavaScript code. We will cover everything from the basics to more advanced concepts, ensuring that you have a thorough understanding of this important feature.</h3>
+                        <Image src="https://media.licdn.com/dms/image/D5612AQESI94ayNiYEQ/article-inline_image-shrink_1500_2232/0/1679071252683?e=1709769600&v=beta&t=tr2caz7lr3N-SKo9Wb8JT_MGSyFXqt0WZ8x_uGDt6Uc" />
+                        </Box>
+                    </Container>
+                </Carousel.Slide>
+                <Carousel.Slide>
+                    <Group
+                        w={'100%'}
+                        mt={'50'}
+                        justify='center'
+                        mb={100}
+                    >
+                        <Center maw={800} h={100} bg="var(--mantine-color-gray-light)" p={40}>
+                            <h1 className='text-center'>Visualized Event loop </h1>
+                        </Center>
+
+                    </Group>
+                    <Container >
+                        <Box>
+                            
+                        </Box>
+                        <Box my={20} >
+                           <Box bg={'rebeccapurple'} p={10} > 
+                           <h3>However, within the Event Loop, there are actually two types of queues:</h3>
+                            <p> - The microtask queue is for microtasks. </p>
+                            <p> - The (macro)task queue is for macrotasks.</p>
+                            <hr />
+                            <p>STACK : Last In, First Out (LIFO)</p>
+                            <p>QUEUE : tasks enqueued first are run first. (FIFO)</p>
+
+                           </Box>
+                            <Image src={"https://res.cloudinary.com/practicaldev/image/fetch/s--05Fi8vBq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/42eatw03fcha0e1qcrf0.gif"} />
+                        </Box>
                     </Container>
                 </Carousel.Slide>
             </Carousel>
