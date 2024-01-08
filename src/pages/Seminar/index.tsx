@@ -4,15 +4,145 @@ import { useState } from 'react';
 import { IconBrandJavascript, IconShadow, IconVersions } from '@tabler/icons-react';
 import code from '/code.png';
 import awaitImg from '/await.png';
+import promiseNew from '/promiseNew.png';
+import asyncImg from '/asyncImg.png';
+import starts from '/startsNew.jpg';
+import fooNew from '/fooNew.jpg';
 
 export const Seminar = () => {
     const [displayJS, setDisplayJS] = useState(false);
     const [text, setText] = useState('');
     const [prosimeStatus, setPromiseStatus] = useState(false);
     const [promiseObject, setPromiseObject] = useState(false);
+    const [async, setAsnc] = useState(false);
+
     return (
-        <Container p={0} m={0} fluid w={'100%'} h={'100%'} pt={70} px={20}>
+        <Container p={0} m={0} fluid w={'100%'} h={'100%'} pt={0} px={20}>
             <Carousel height={'100%'} style={{ width: '100%' }}>
+                <Carousel.Slide>
+                    <Group
+                        w={'100%'}
+                        mt={'50'}
+                        justify='center'
+                        mb={50}
+                    >
+                        <Center maw={1300} h={100} bg="var(--mantine-color-gray-light)" p={40}>
+                            <h1 className='text-center'>How JavaScript works</h1>
+                        </Center>
+                    </Group>
+                    <Container fluid>
+                        <Grid gutter={12}>
+                            <Grid.Col span={12} >
+                                <h3>As JavaScript is getting more and more popular, teams are leveraging its support on many levels in their stack - front-end, back-end, hybrid apps, embedded devices and much more.</h3>
+                                <Image src={starts} />
+                            </Grid.Col>
+                        </Grid>
+                    </Container>
+                </Carousel.Slide>
+                <Carousel.Slide>
+                    <Group
+                        w={'100%'}
+                        mt={'50'}
+                        justify='center'
+                        mb={50}
+                    >
+                        <Center maw={1300} h={100} bg="var(--mantine-color-gray-light)" p={40}>
+                            <h1 className='text-center'>JavaScript Engine</h1>
+                        </Center>
+                    </Group>
+                    <Container fluid>
+                        <Grid gutter={12}>
+                        <h3>A popular example of a JavaScript Engine is Google’s V8 engine. The V8 engine is used inside Chrome and Node.js for example. Here is a very simplified view of what it looks like:</h3>
+
+                            <Grid.Col span={6} >
+                                <Image src={'https://miro.medium.com/v2/resize:fit:4800/format:webp/1*OnH_DlbNAPvB9KLxUCyMsA.png'} />
+                            </Grid.Col>
+                            <Grid.Col span={6} >
+                                <Box>
+                                <h1>The Engine consists of two main components:</h1> 
+                                <ul>
+                                    <li><h2>* Memory Heap — this is where the memory allocation happens</h2></li>
+                                    <li><h2>* Call Stack — this is where your stack frames are as your code executes</h2></li>
+                                </ul>
+                                </Box>
+
+                            </Grid.Col>
+                        </Grid>
+                    </Container>
+                </Carousel.Slide>
+                <Carousel.Slide>
+                    <Group
+                        w={'100%'}
+                        mt={'50'}
+                        justify='center'
+                        mb={50}
+                    >
+                        <Center maw={1300} h={100} bg="var(--mantine-color-gray-light)" p={40}>
+                            <h1 className='text-center'>The runtime</h1>
+                        </Center>
+                    </Group>
+                    <Container>
+                        <Box>
+                        <h3>There are APIs in the browser that have been used by almost any JavaScript developer out there (e.g. “setTimeout”). Those APIs, however, are not provided by the Engine.</h3>
+                        <h3>So, where are they coming from?</h3>
+                        <h3>It turns out that the reality is a bit more complicated.</h3>
+                        </Box>
+                        <Grid gutter={12}>
+                            <Grid.Col span={12} >
+                                <Image src={'https://miro.medium.com/v2/resize:fit:4800/format:webp/1*4lHHyfEhVB0LnQ3HlhSs8g.png'} />
+                            </Grid.Col>
+                        </Grid>
+                    </Container>
+                </Carousel.Slide>
+                <Carousel.Slide>
+                    <Group
+                        w={'100%'}
+                        mt={'50'}
+                        justify='center'
+                        mb={50}
+                    >
+                        <Center maw={1300} h={100} bg="var(--mantine-color-gray-light)" p={40}>
+                            <h1 className='text-center'>Call stack</h1>
+                        </Center>
+                    </Group>
+                    <Container>
+                        <Box>
+                        <h3>JavaScript is a single-threaded programming language, which means it has a single Call Stack. Therefore it can do one thing at a time.</h3>
+                        <Center maw={1300} h={100} bg="var(--mantine-color-gray-light)" p={40}>
+                           
+                        </Center>
+                        </Box>
+                        <Grid gutter={12}>
+                            <Grid.Col span={12} >
+                                <Image src={'https://miro.medium.com/v2/resize:fit:4800/format:webp/1*Yp1KOt_UJ47HChmS9y7KXw.png'} />
+                            </Grid.Col>
+                        </Grid>
+                    </Container>
+                </Carousel.Slide>
+                <Carousel.Slide>
+                    <Group
+                        w={'100%'}
+                        mt={'50'}
+                        justify='center'
+                        mb={50}
+                    >
+                        <Center maw={1300} h={100} bg="var(--mantine-color-gray-light)" p={40}>
+                            <h1 className='text-center'>“Blowing the stack”</h1>
+                        </Center>
+                    </Group>
+                    <Container>
+                        <Box>
+                        <h3>This happens when you reach the maximum Call Stack size. And that could happen quite easily, especially if you’re using recursion without testing your code very extensively. Take a look at this sample code:</h3>
+                        </Box>
+                        <Grid gutter={12}>
+                        <Image src={fooNew} />
+
+                            <Grid.Col span={12} >
+                                <Image src={'https://miro.medium.com/v2/resize:fit:4800/format:webp/1*AycFMDy9tlDmNoc5LXd9-g.png'} />
+                            </Grid.Col>
+                        </Grid>
+                    </Container>
+                </Carousel.Slide>
                 <Carousel.Slide>
                     <Group
                         w={'100%'}
@@ -20,18 +150,18 @@ export const Seminar = () => {
                         justify='center'
                         mb={100}
                     >
-                        <Center maw={800} h={100} bg="var(--mantine-color-gray-light)" p={40}>
-                            <h2 className='text-center'>Javascript-visualized: Promise & Async/Await & Event loop</h2>
+                        <Center maw={1000} h={100} bg="var(--mantine-color-gray-light)" p={40}>
+                            <h1 className='text-center'>Javascript-visualized: Promise & Async/Await & Event loop</h1>
                         </Center>
                     </Group>
                     <Grid gutter={12} h={720}>
                         <Grid.Col span={6} >
-                            <h3>Event loop javascript</h3>
+                            <h2>Event loop javascript</h2>
                             <Image src={"https://res.cloudinary.com/practicaldev/image/fetch/s--05Fi8vBq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/42eatw03fcha0e1qcrf0.gif"} />
 
                         </Grid.Col>
                         <Grid.Col span={6}>
-                            <h3>Promise javascript</h3>
+                            <h2>Promise javascript</h2>
                             <Image src={"https://dev-to-uploads.s3.amazonaws.com/i/34m9mus03v2zo9agn2bq.png"} />
                         </Grid.Col>
                     </Grid>
@@ -76,12 +206,17 @@ export const Seminar = () => {
                         w={'100%'}
                         mt={'50'}
                         justify='center'
-                        mb={100}
+                        mb={20}
                     >
                         <Center maw={800} h={100} bg="var(--mantine-color-gray-light)" p={40}>
-                            <h1 className='text-center'>Asynchronous JavaScript <IconBrandJavascript color={'orange'} size={32} /></h1>
+                            <h1 className='text-center'>Asynchronous JavaScript <IconBrandJavascript color={'orange'} size={32} onClick={() => setAsnc(!async)} /></h1>
                         </Center>
+
                     </Group>
+                    {async ? <Container size={"md"}><Center maw={1000} h={200} bg="var(--mantine-color-gray-light)" p={40} mb={30}>
+                        <h3 style={{ color: 'orange' }}>Asynchronous programming is a technique that enables your program to start a potentially long-running task and still be able to be responsive to other events while that task runs, rather than having to wait until that task has finished. Once that task has finished, your program is presented with the result.</h3>
+
+                    </Center></Container> : null}
                     <Container fluid>
                         <Grid justify='center'>
                             <Grid.Col span="auto">
@@ -236,7 +371,7 @@ export const Seminar = () => {
                     </Group>
                     <Container>
                         <Box>
-                            <p>We can create a promise, using a Promise constructor that receives a callback. Okay cool, let's try it out!</p>
+                            <h2>We can create a promise, using a Promise constructor that receives a callback. Okay cool, let's try it out!</h2>
                             <Image src="https://res.cloudinary.com/practicaldev/image/fetch/s--phTVdCKA--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/79zi452hphe7ecylhozy.gif" />
                         </Box>
                         <Box my={20}>
@@ -258,7 +393,7 @@ export const Seminar = () => {
                     </Group>
                     <Container size={"lg"}>
                         <Box>
-                            <p>We can create a promise, using a Promise constructor that receives a callback. Okay cool, let's try it out!</p>
+                            <h3>We can create a promise, using a Promise constructor that receives a callback. Okay cool, let's try it out!</h3>
                             <Image src="https://dev-to-uploads.s3.amazonaws.com/i/34m9mus03v2zo9agn2bq.png" />
                             {/* <Image src="https://res.cloudinary.com/practicaldev/image/fetch/s--9A_mOYMP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/duen4peq0bdr55cka5ya.png" />                            */}
                         </Box>
@@ -349,15 +484,19 @@ export const Seminar = () => {
                         mb={100}
                     >
                         <Center maw={800} h={100} bg="var(--mantine-color-gray-light)" p={40}>
-                            <h1 className='text-center'>Event loop Javascript </h1>
+                            <h1 className='text-center'>Example : Promise real code </h1>
                         </Center>
 
                     </Group>
-                    <Container >
-                        <Box>
-                            <h3>The JavaScript Event Loop is a crucial aspect of the language that allows it to execute code asynchronously, enabling developers to build powerful and responsive web applications. This guide aims to provide a deep understanding of how the Event Loop works, why it is needed, and how it affects your JavaScript code. We will cover everything from the basics to more advanced concepts, ensuring that you have a thorough understanding of this important feature.</h3>
-                        <Image src="https://media.licdn.com/dms/image/D5612AQESI94ayNiYEQ/article-inline_image-shrink_1500_2232/0/1679071252683?e=1709769600&v=beta&t=tr2caz7lr3N-SKo9Wb8JT_MGSyFXqt0WZ8x_uGDt6Uc" />
-                        </Box>
+                    <Container fluid>
+                        <Grid>
+                            <Grid.Col span={6}>
+                                <Image src={promiseNew} />
+                            </Grid.Col>
+                            <Grid.Col span={6}>
+                                <Image src={asyncImg} />
+                            </Grid.Col>
+                        </Grid>
                     </Container>
                 </Carousel.Slide>
                 <Carousel.Slide>
@@ -370,12 +509,23 @@ export const Seminar = () => {
                         <Center maw={800} h={100} bg="var(--mantine-color-gray-light)" p={40}>
                             <h1 className='text-center'>Event loop Javascript </h1>
                         </Center>
-
+                    </Group>
+                </Carousel.Slide>
+                <Carousel.Slide>
+                    <Group
+                        w={'100%'}
+                        mt={'50'}
+                        justify='center'
+                        mb={100}
+                    >
+                        <Center maw={800} h={100} bg="var(--mantine-color-gray-light)" p={40}>
+                            <h1 className='text-center'>Event loop Javascript </h1>
+                        </Center>
                     </Group>
                     <Container >
                         <Box>
-                            <h3>The JavaScript Event Loop is a crucial aspect of the language that allows it to execute code asynchronously, enabling developers to build powerful and responsive web applications. This guide aims to provide a deep understanding of how the Event Loop works, why it is needed, and how it affects your JavaScript code. We will cover everything from the basics to more advanced concepts, ensuring that you have a thorough understanding of this important feature.</h3>
-                        <Image src="https://media.licdn.com/dms/image/D5612AQESI94ayNiYEQ/article-inline_image-shrink_1500_2232/0/1679071252683?e=1709769600&v=beta&t=tr2caz7lr3N-SKo9Wb8JT_MGSyFXqt0WZ8x_uGDt6Uc" />
+                            <h3>JavaScript has a runtime model based on an event loop, which is responsible for executing the code, collecting and processing events, and executing queued sub-tasks. This model is quite different from models in other languages like C and Java.</h3>
+                            <Image src="https://media.licdn.com/dms/image/D5612AQESI94ayNiYEQ/article-inline_image-shrink_1500_2232/0/1679071252683?e=1709769600&v=beta&t=tr2caz7lr3N-SKo9Wb8JT_MGSyFXqt0WZ8x_uGDt6Uc" />
                         </Box>
                     </Container>
                 </Carousel.Slide>
@@ -393,19 +543,187 @@ export const Seminar = () => {
                     </Group>
                     <Container >
                         <Box>
-                            
+
                         </Box>
                         <Box my={20} >
-                           <Box bg={'rebeccapurple'} p={10} > 
-                           <h3>However, within the Event Loop, there are actually two types of queues:</h3>
-                            <p> - The microtask queue is for microtasks. </p>
-                            <p> - The (macro)task queue is for macrotasks.</p>
-                            <hr />
-                            <p>STACK : Last In, First Out (LIFO)</p>
-                            <p>QUEUE : tasks enqueued first are run first. (FIFO)</p>
+                            <Box bg={'rebeccapurple'} p={10} >
+                                <h3>However, within the Event Loop, there are actually two types of queues:</h3>
+                                <p> - The microtask queue is for microtasks. </p>
+                                <p> - The (macro)task queue is for macrotasks.</p>
+                                <hr />
+                                <p>STACK : Last In, First Out (LIFO)</p>
+                                <p>QUEUE : tasks enqueued first are run first. (FIFO)</p>
 
-                           </Box>
+                            </Box>
                             <Image src={"https://res.cloudinary.com/practicaldev/image/fetch/s--05Fi8vBq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/42eatw03fcha0e1qcrf0.gif"} />
+                        </Box>
+                    </Container>
+                </Carousel.Slide>
+                <Carousel.Slide>
+                    <Group
+                        w={'100%'}
+                        mt={'50'}
+                        justify='center'
+                        mb={100}
+                    >
+                        <Center maw={800} h={100} bg="var(--mantine-color-gray-light)" p={40}>
+                            <h1 className='text-center'>Visualized Event loop </h1>
+                        </Center>
+
+                    </Group>
+                    <Container >
+                        <Box>
+
+                        </Box>
+                        <Box my={20} >
+                            <Box p={10} >
+                                <h2>Let's use it with some real code!</h2>
+                            </Box>
+                            <Image src={"https://res.cloudinary.com/practicaldev/image/fetch/s--fnbqqf1d--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/g61wwyi8wchk2hpzeq4u.png"} />
+                        </Box>
+                    </Container>
+                </Carousel.Slide>
+                <Carousel.Slide>
+                    <Group
+                        w={'100%'}
+                        mt={'50'}
+                        justify='center'
+                        mb={100}
+                    >
+                        <Center maw={800} h={100} bg="var(--mantine-color-gray-light)" p={40}>
+                            <h1 className='text-center'>Visualized Event loop </h1>
+                        </Center>
+
+                    </Group>
+                    <Container >
+                        <Box>
+
+                        </Box>
+                        <Box my={20} >
+                            <Box p={10} >
+                                <h2>Let's use it with some real code!</h2>
+                            </Box>
+                            <Image src={"https://res.cloudinary.com/practicaldev/image/fetch/s---Bt6DKsn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/6cbjuexvy6z9ltk0bi18.gif"} />
+                        </Box>
+                    </Container>
+                </Carousel.Slide>
+                <Carousel.Slide>
+                    <Group
+                        w={'100%'}
+                        mt={'50'}
+                        justify='center'
+                        mb={100}
+                    >
+                        <Center maw={800} h={100} bg="var(--mantine-color-gray-light)" p={40}>
+                            <h1 className='text-center'>Visualized Event loop </h1>
+                        </Center>
+
+                    </Group>
+                    <Container >
+                        <Box>
+
+                        </Box>
+                        <Box my={20} >
+                            <Box p={10} >
+                                <h2>Let's use it with some real code!</h2>
+                            </Box>
+                            <Image src={"https://res.cloudinary.com/practicaldev/image/fetch/s--6NSYq-nO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/yqoemb6f32lvovge8yrp.gif"} />
+                        </Box>
+                    </Container>
+                </Carousel.Slide>
+                <Carousel.Slide>
+                    <Group
+                        w={'100%'}
+                        mt={'50'}
+                        justify='center'
+                        mb={100}
+                    >
+                        <Center maw={800} h={100} bg="var(--mantine-color-gray-light)" p={40}>
+                            <h1 className='text-center'>Visualized Event loop </h1>
+                        </Center>
+
+                    </Group>
+                    <Container >
+                        <Box>
+
+                        </Box>
+                        <Box my={20} >
+                            <Box p={10} >
+                                <h2>Let's use it with some real code!</h2>
+                            </Box>
+                            <Image src={"https://res.cloudinary.com/practicaldev/image/fetch/s--us8FF30N--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/6wxjxduh62fqt531e2rc.gif"} />
+                        </Box>
+                    </Container>
+                </Carousel.Slide>
+                <Carousel.Slide>
+                    <Group
+                        w={'100%'}
+                        mt={'50'}
+                        justify='center'
+                        mb={100}
+                    >
+                        <Center maw={800} h={100} bg="var(--mantine-color-gray-light)" p={40}>
+                            <h1 className='text-center'>Visualized Event loop </h1>
+                        </Center>
+
+                    </Group>
+                    <Container >
+                        <Box>
+
+                        </Box>
+                        <Box my={20} >
+                            <Box p={10} >
+                                <h2>Let's use it with some real code!</h2>
+                            </Box>
+                            <Image src={"https://res.cloudinary.com/practicaldev/image/fetch/s--oOS_-CiG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/a6jk0exl137yka3oq9k4.gif"} />
+                        </Box>
+                    </Container>
+                </Carousel.Slide>
+                <Carousel.Slide>
+                    <Group
+                        w={'100%'}
+                        mt={'50'}
+                        justify='center'
+                        mb={100}
+                    >
+                        <Center maw={800} h={100} bg="var(--mantine-color-gray-light)" p={40}>
+                            <h1 className='text-center'>Visualized Event loop </h1>
+                        </Center>
+
+                    </Group>
+                    <Container >
+                        <Box>
+
+                        </Box>
+                        <Box my={20} >
+                            <Box p={10} >
+                                <h2>Let's use it with some real code!</h2>
+                            </Box>
+                            <Image src={"https://res.cloudinary.com/practicaldev/image/fetch/s--5iH5BNWm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/lczn4fca41is4vpicr6w.gif"} />
+                        </Box>
+                    </Container>
+                </Carousel.Slide>
+                <Carousel.Slide>
+                    <Group
+                        w={'100%'}
+                        mt={'50'}
+                        justify='center'
+                        mb={100}
+                    >
+                        <Center maw={800} h={100} bg="var(--mantine-color-gray-light)" p={40}>
+                            <h1 className='text-center'>Visualized Event loop </h1>
+                        </Center>
+
+                    </Group>
+                    <Container >
+                        <Box>
+
+                        </Box>
+                        <Box my={20} >
+                            <Box p={10} >
+                                <h2>Let's use it with some real code!</h2>
+                            </Box>
+                            <Image src={"https://res.cloudinary.com/practicaldev/image/fetch/s--hPFPTZp2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/p54casaaz9oq0g8ztpi5.gif"} />
                         </Box>
                     </Container>
                 </Carousel.Slide>
@@ -413,3 +731,4 @@ export const Seminar = () => {
         </Container>
     );
 }
+
