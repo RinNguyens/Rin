@@ -30,13 +30,15 @@ export const Seminar = () => {
                             <h1 className='text-center'>How JavaScript works</h1>
                         </Center>
                     </Group>
+                    <Container>
+                        <Center maw={1300} h={100} bg="var(--mantine-color-gray-light)" p={40}>
+                            <h3>As JavaScript is getting more and more popular, teams are leveraging its support on many levels in their stack - front-end, back-end, hybrid apps, embedded devices and much more.</h3>
+                        </Center>
+                    </Container>
                     <Container fluid>
-                        <Grid gutter={12}>
-                            <Grid.Col span={12} >
-                                <h3>As JavaScript is getting more and more popular, teams are leveraging its support on many levels in their stack - front-end, back-end, hybrid apps, embedded devices and much more.</h3>
-                                <Image src={starts} />
-                            </Grid.Col>
-                        </Grid>
+                        <Box>
+                            <Image src={starts} />
+                        </Box>
                     </Container>
                 </Carousel.Slide>
                 <Carousel.Slide>
@@ -52,18 +54,20 @@ export const Seminar = () => {
                     </Group>
                     <Container fluid>
                         <Grid gutter={12}>
-                        <h3>A popular example of a JavaScript Engine is Google’s V8 engine. The V8 engine is used inside Chrome and Node.js for example. Here is a very simplified view of what it looks like:</h3>
+                            <Center maw={1300} h={100} bg="var(--mantine-color-gray-light)" p={40}>
+                                <h3>A popular example of a JavaScript Engine is Google’s V8 engine. The V8 engine is used inside Chrome and Node.js for example. Here is a very simplified view of what it looks like:</h3>
 
+                            </Center>
                             <Grid.Col span={6} >
                                 <Image src={'https://miro.medium.com/v2/resize:fit:4800/format:webp/1*OnH_DlbNAPvB9KLxUCyMsA.png'} />
                             </Grid.Col>
                             <Grid.Col span={6} >
                                 <Box>
-                                <h1>The Engine consists of two main components:</h1> 
-                                <ul>
-                                    <li><h2>* Memory Heap — this is where the memory allocation happens</h2></li>
-                                    <li><h2>* Call Stack — this is where your stack frames are as your code executes</h2></li>
-                                </ul>
+                                    <h1>The Engine consists of two main components:</h1>
+                                    <ul>
+                                        <li><h2>* Memory Heap — this is where the memory allocation happens</h2></li>
+                                        <li><h2>* Call Stack — this is where your stack frames are as your code executes</h2></li>
+                                    </ul>
                                 </Box>
 
                             </Grid.Col>
@@ -82,10 +86,10 @@ export const Seminar = () => {
                         </Center>
                     </Group>
                     <Container>
-                        <Box>
-                        <h3>There are APIs in the browser that have been used by almost any JavaScript developer out there (e.g. “setTimeout”). Those APIs, however, are not provided by the Engine.</h3>
-                        <h3>So, where are they coming from?</h3>
-                        <h3>It turns out that the reality is a bit more complicated.</h3>
+                        <Box style={{ backgroundColor: '#F2F3F4', padding: '10px', borderRadius: '5px' }}>
+                            <h3>There are APIs in the browser that have been used by almost any JavaScript developer out there (e.g. “setTimeout”). Those APIs, however, are not provided by the Engine.</h3>
+                            <h3>So, where are they coming from?</h3>
+                            <h3>It turns out that the reality is a bit more complicated.</h3>
                         </Box>
                         <Grid gutter={12}>
                             <Grid.Col span={12} >
@@ -107,10 +111,9 @@ export const Seminar = () => {
                     </Group>
                     <Container>
                         <Box>
-                        <h3>JavaScript is a single-threaded programming language, which means it has a single Call Stack. Therefore it can do one thing at a time.</h3>
-                        <Center maw={1300} h={100} bg="var(--mantine-color-gray-light)" p={40}>
-                           
-                        </Center>
+                            <Box style={{ backgroundColor: '#F2F3F4', padding: '10px', borderRadius: '5px' }}>
+                                <h3>JavaScript is a single-threaded programming language, which means it has a single Call Stack. Therefore it can do one thing at a time.</h3>
+                            </Box>
                         </Box>
                         <Grid gutter={12}>
                             <Grid.Col span={12} >
@@ -127,18 +130,42 @@ export const Seminar = () => {
                         mb={50}
                     >
                         <Center maw={1300} h={100} bg="var(--mantine-color-gray-light)" p={40}>
-                            <h1 className='text-center'>“Blowing the stack”</h1>
+                            <h1 className='text-center'>"Blocking the stack”</h1>
                         </Center>
                     </Group>
                     <Container>
                         <Box>
-                        <h3>This happens when you reach the maximum Call Stack size. And that could happen quite easily, especially if you’re using recursion without testing your code very extensively. Take a look at this sample code:</h3>
+                            <h3>This happens when you reach the maximum Call Stack size. And that could happen quite easily, especially if you’re using recursion without testing your code very extensively. Take a look at this sample code:</h3>
                         </Box>
                         <Grid gutter={12}>
-                        <Image src={fooNew} />
+                            <Image src={fooNew} />
 
                             <Grid.Col span={12} >
                                 <Image src={'https://miro.medium.com/v2/resize:fit:4800/format:webp/1*AycFMDy9tlDmNoc5LXd9-g.png'} />
+                            </Grid.Col>
+                        </Grid>
+                    </Container>
+                </Carousel.Slide>
+                <Carousel.Slide>
+                    <Group
+                        w={'100%'}
+                        mt={'50'}
+                        justify='center'
+                        mb={50}
+                    >
+                        <Center maw={1300} h={100} bg="var(--mantine-color-gray-light)" p={40}>
+                            <h1 className='text-center'>"Blocking the stack”</h1>
+                        </Center>
+                    </Group>
+                    <Container>
+                        <Box>
+                            <h3>This happens when you reach the maximum Call Stack size. And that could happen quite easily, especially if you’re using recursion without testing your code very extensively. Take a look at this sample code:</h3>
+                        </Box>
+                        <Grid gutter={12}>
+                            {/* <Image src={fooNew} /> */}
+
+                            <Grid.Col span={12} >
+                                <Image src={'https://images.viblo.asia/fb58ff3b-b056-4a65-be96-cf8b132f88f8.png'} />
                             </Grid.Col>
                         </Grid>
                     </Container>
@@ -510,18 +537,6 @@ export const Seminar = () => {
                             <h1 className='text-center'>Event loop Javascript </h1>
                         </Center>
                     </Group>
-                </Carousel.Slide>
-                <Carousel.Slide>
-                    <Group
-                        w={'100%'}
-                        mt={'50'}
-                        justify='center'
-                        mb={100}
-                    >
-                        <Center maw={800} h={100} bg="var(--mantine-color-gray-light)" p={40}>
-                            <h1 className='text-center'>Event loop Javascript </h1>
-                        </Center>
-                    </Group>
                     <Container >
                         <Box>
                             <h3>JavaScript has a runtime model based on an event loop, which is responsible for executing the code, collecting and processing events, and executing queued sub-tasks. This model is quite different from models in other languages like C and Java.</h3>
@@ -546,7 +561,7 @@ export const Seminar = () => {
 
                         </Box>
                         <Box my={20} >
-                            <Box bg={'rebeccapurple'} p={10} >
+                        <Box style={{ backgroundColor: '#F2F3F4', padding: '10px', borderRadius: '5px' }}>
                                 <h3>However, within the Event Loop, there are actually two types of queues:</h3>
                                 <p> - The microtask queue is for microtasks. </p>
                                 <p> - The (macro)task queue is for macrotasks.</p>
@@ -581,6 +596,16 @@ export const Seminar = () => {
                             </Box>
                             <Image src={"https://res.cloudinary.com/practicaldev/image/fetch/s--fnbqqf1d--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/g61wwyi8wchk2hpzeq4u.png"} />
                         </Box>
+                        <Box style={{ backgroundColor: '#F2F3F4', padding: '10px', borderRadius: '5px' }}>
+                             What do you think will be the output of this code? You might expect it to be:
+                            <ul>
+                                <li>{`Start -> Timeout -> Promise -> End`}</li>
+                            </ul>
+                            But actually, it will be:
+                            <ul>
+                                <li>{`Start -> End -> Promise -> Timeout`}</li>
+                            </ul>
+                        </Box>
                     </Container>
                 </Carousel.Slide>
                 <Carousel.Slide>
@@ -605,6 +630,7 @@ export const Seminar = () => {
                             </Box>
                             <Image src={"https://res.cloudinary.com/practicaldev/image/fetch/s---Bt6DKsn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/6cbjuexvy6z9ltk0bi18.gif"} />
                         </Box>
+                        
                     </Container>
                 </Carousel.Slide>
                 <Carousel.Slide>
@@ -703,6 +729,7 @@ export const Seminar = () => {
                         </Box>
                     </Container>
                 </Carousel.Slide>
+                
                 <Carousel.Slide>
                     <Group
                         w={'100%'}
@@ -725,6 +752,95 @@ export const Seminar = () => {
                             </Box>
                             <Image src={"https://res.cloudinary.com/practicaldev/image/fetch/s--hPFPTZp2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/p54casaaz9oq0g8ztpi5.gif"} />
                         </Box>
+                    </Container>
+                </Carousel.Slide>
+                <Carousel.Slide>
+                    <Group
+                        w={'100%'}
+                        mt={'50'}
+                        justify='center'
+                    >
+                        <Center maw={800} h={100} bg="var(--mantine-color-gray-light)" p={40}>
+                            <h1 className='text-center'>Conclusion </h1>
+                        </Center>
+
+                    </Group>
+                    <Container >
+                        <Box my={20} >
+                            <Image src={'https://res.cloudinary.com/practicaldev/image/fetch/s--W00Fex7D--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/spkr1vcojuaf9ho0yy06.png'} />
+                        </Box>
+                    </Container>
+                </Carousel.Slide>
+                <Carousel.Slide>
+                    <Group
+                        w={'100%'}
+                        mt={'50'}
+                        justify='center'
+                        mb={30}
+                    >
+                        <Center maw={800} h={100} bg="var(--mantine-color-gray-light)" p={40}>
+                            <h1 className='text-center'>Summary</h1>
+                        </Center>
+
+                    </Group>
+                    <Container>
+                        <Group m={10}>
+                            <Box>
+                                <h3>A more detailed event loop algorithm (though still simplified compared to the specification):</h3>
+                                <p style={{ fontSize: '20px' }}>
+                                    <ol>
+                                        <li>Dequeue and run the oldest task from the macrotask queue (e.g. “script”).</li>
+                                        <li>Execute all microtasks:
+                                            <ul>
+                                                <li>While the microtask queue is not empty:</li>
+                                                <ul>
+                                                    <li>Dequeue and run the oldest microtask.</li>
+                                                </ul>
+                                            </ul>
+                                        </li>
+                                        <li>Render changes if any.</li>
+                                        <li>If the macrotask queue is empty, wait till a macrotask appears.</li>
+                                        <li>Go to step 1.</li>
+                                    </ol>
+                                </p>
+                            </Box>
+                        </Group>
+                        <hr />
+                        <Group m={10}>
+                            <Box>
+                                <table>
+                                    <tbody><tr>
+                                        <td>
+                                            (Macro)task
+                                        </td>
+                                        <td>
+                                            <code>setTimeout</code> | <code>setInterval</code> | <code>setImmediate</code> | <code>requestAnimationFrame</code> | <code>I/O</code>
+                                        </td>
+                                    </tr>
+                                        <tr>
+                                            <td>
+                                                Microtask
+                                            </td>
+                                            <td>
+                                                <code>process.nextTick</code> | <code>Promise callback</code> | <code>queueMicrotask</code>
+                                            </td>
+                                        </tr>
+                                    </tbody></table>
+                            </Box>
+                        </Group>
+                        <Group m={10}>
+                            <Box>
+                                <h3>The event loop gives a different priority to the tasks:</h3>
+                                <p style={{ fontSize: '20px' }}>
+                                    <ol>
+                                        <li>All functions in that are currently in the call stack get executed. When they returned a value, they get popped off the stack.</li>
+                                        <li>When the call stack is empty, all queued up microtasks are popped onto the callstack one by one, and get executed! (Microtasks themselves can also return new microtasks, effectively creating an infinite microtask loop 😬)</li>
+                                        <li>If both the call stack and microtask queue are empty, the event loop checks if there are tasks left on the (macro)task queue. The tasks get popped onto the callstack, executed, and popped off!
+                                        </li>
+                                    </ol>
+                                </p>
+                            </Box>
+                        </Group>
                     </Container>
                 </Carousel.Slide>
             </Carousel>

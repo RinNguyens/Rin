@@ -1,3 +1,7 @@
 .mantine-Timeline-itemTitle {
   font-weight: bold !important;
 }
+table td {
+  padding: 20px;
+  border: 1px solid #d6d6d7;
+}
