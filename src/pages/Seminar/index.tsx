@@ -596,16 +596,6 @@ export const Seminar = () => {
                             </Box>
                             <Image src={"https://res.cloudinary.com/practicaldev/image/fetch/s--fnbqqf1d--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/g61wwyi8wchk2hpzeq4u.png"} />
                         </Box>
-                        <Box style={{ backgroundColor: '#F2F3F4', padding: '10px', borderRadius: '5px' }}>
-                             What do you think will be the output of this code? You might expect it to be:
-                            <ul>
-                                <li>{`Start -> Timeout -> Promise -> End`}</li>
-                            </ul>
-                            But actually, it will be:
-                            <ul>
-                                <li>{`Start -> End -> Promise -> Timeout`}</li>
-                            </ul>
-                        </Box>
                     </Container>
                 </Carousel.Slide>
                 <Carousel.Slide>
@@ -766,9 +756,9 @@ export const Seminar = () => {
 
                     </Group>
                     <Container >
-                        <Box my={20} >
-                            <Image src={'https://res.cloudinary.com/practicaldev/image/fetch/s--W00Fex7D--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/spkr1vcojuaf9ho0yy06.png'} />
-                        </Box>
+                        <Center my={20} >
+                            <Image style={{width: '80%'}} src={'https://res.cloudinary.com/practicaldev/image/fetch/s--W00Fex7D--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/spkr1vcojuaf9ho0yy06.png'} />
+                        </Center>
                     </Container>
                 </Carousel.Slide>
                 <Carousel.Slide>
